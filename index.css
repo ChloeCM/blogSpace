@@ -49,3 +49,8 @@ button:hover {
   border: 10px;
   background: rgb(255, 245, 135);
 }
+
+/* Main Container - Blog Posts */
+#blog-list {
+  padding: 1rem;
+}

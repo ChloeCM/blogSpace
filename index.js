@@ -17,8 +17,38 @@ function renderPosts() {
   for (let data of postArray) {
     htmlDisplay += `
           <h3>${data.title}</h3>
-          <p>${data.body}</p> 
+          <p>${data.body}</p>
+          <br />
+          <hr /> 
         `;
   }
   document.getElementById("blog-list").innerHTML = htmlDisplay;
 }
+
+newPostEl.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const newTitle = postTitleEl.value;
+  const newBody = postBodyEl.value;
+  const data = {
+    title: newTitle,
+    body: newBody,
+  };
+
+  const options = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-type": "application/json",
+    },
+  };
+
+  fetch("https://apis.scrimba.com/jsonplaceholder/posts", options)
+    .then((res) => res.json())
+    .then((post) => {
+      postArray.unshift(post);
+      renderPosts();
+      postTitleEl.value = "";
+      postBodyEl.value = "";
+    });
+});
