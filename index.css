@@ -54,3 +54,29 @@ button:hover {
 #blog-list {
   padding: 1rem;
 }
+
+/* Media Queries */
+@media (min-width: 768px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  label {
+    text-align: center;
+    margin: 1rem 0 0.5rem;
+    width: 100%;
+  }
+
+  #post-title,
+  #post-body {
+    width: 60%;
+    margin: 0 auto;
+    align-content: center;
+  }
+
+  button {
+    width: 15%;
+  }
+}

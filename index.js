@@ -35,6 +35,11 @@ newPostEl.addEventListener("submit", function (e) {
     body: newBody,
   };
 
+  if (!newTitle || !newBody) {
+    alert("Please enter both a title and the content for your new post");
+    return;
+  }
+
   const options = {
     method: "POST",
     body: JSON.stringify(data),
