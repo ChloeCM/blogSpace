@@ -65,8 +65,10 @@ button:hover {
 
   label {
     text-align: center;
-    margin: 1rem 0 0.5rem;
+    margin: 1rem;
+    padding: 1rem;
     width: 100%;
+    /* border: 1px red solid; */
   }
 
   #post-title,

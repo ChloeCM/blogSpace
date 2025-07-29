@@ -7,7 +7,7 @@ let postArray = [];
 fetch("https://apis.scrimba.com/jsonplaceholder/posts")
   .then((res) => res.json())
   .then((data) => {
-    postArray = data.slice(0, 5);
+    postArray = data.slice(0, 9);
     console.log(postArray);
     renderPosts();
   });
